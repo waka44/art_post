@@ -1,2 +1,0 @@
-class NiceN < ApplicationRecord
-end

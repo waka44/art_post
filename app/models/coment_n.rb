@@ -1,2 +1,0 @@
-class ComentN < ApplicationRecord
-end
