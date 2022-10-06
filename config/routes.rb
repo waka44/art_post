@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'home/top'
-  end
-  namespace :public do
-    get 'home/top'
-  end
+ 
 # 顧客用
 devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",
@@ -28,7 +23,11 @@ scope module: :public do
   
   root to: "homes#top"
   
-  resources :nices, only: [:creste, :destroy]
+  resources :arts ,   only: [:new, :index, :show, :edit, :creste, :destroy, :update] do
+  resources :coments, only: [:create, :destroy]
+  resources :nices,   only: [:creste, :destroy]
+end
+
 end
 
 end

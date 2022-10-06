@@ -1,4 +1,12 @@
 <!--customer情報（ヘッダー）-->
 
 <!--indexの部分テンプレート-->
+<h1>投稿一覧</h1>
+
+<%= @arts.each do |art| %>
+<p>タイトル</p>
+<span><%= art.title %></span>
+
+
+<% end %>
 <!--投稿したcustomerニックネーム-->
