@@ -5,8 +5,9 @@
 
 <%= @arts.each do |art| %>
 <p>タイトル</p>
-<span><%= art.title %></span>
+<span><%= link_to art.title, art_path(art.id) %></span>
 
-
+<%= image_tag art.image %>
 <% end %>
+
 <!--投稿したcustomerニックネーム-->

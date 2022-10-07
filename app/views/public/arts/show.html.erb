@@ -3,5 +3,23 @@
 <!--editの部分テンプレート-->
 
 <!--showの部分テンプレート-->
+<%= @customer.name %>
+<%= image_tag art.image %>
+<h4><%= @art.title %></h4>
+<p><%= @art.body %></p>
+
+<!--いいね機能-->
+<%#    <% if @art.nice?(current_customer) %>
+<%#        <%= link_to art_nace_path(@art.id), method: :delete do %>
+<%#            <span style= "color:red;">♥</span>
+        <% end %>
+<%#    <% else %>
+<%#        <%= link_to art_nace_path(@art.id), method: :art do %>
+<%#            <span>♥</span>
+        <% end %>
+<%#    <% end %>
+
+<%= link_to "編集", edit_art_path(@art.id) %>
+<%= link_to "削除", art_path(@art.id), method: :delete, "data-confirm" => "本当に削除しますか？"　%>
 
 <!--コメント一覧-->

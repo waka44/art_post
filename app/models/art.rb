@@ -5,6 +5,8 @@ class Art < ApplicationRecord
     
     has_one_attached :image
     
+    validates :image, presence: true
+    
     def nice?(customer)
         favorites.where(customer_id: customer.id).exists?
     end 

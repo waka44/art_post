@@ -1,5 +1,14 @@
 <h1>投稿フォーム</h1>
 
+<% if @art.errors.any? %>
+    画像を投稿してください
+    <ul>
+        <% @art.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
 <%= form_with model: Art.new do |f| %>
     <h4>画像</h4>
     <%= f.file_field :image, accept: "image/*" %>
