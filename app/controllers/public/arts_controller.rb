@@ -5,20 +5,20 @@ class Public::ArtsController < ApplicationController
     end
     
     def create
-        art = Art.new(art_params)
-        if art.save!
+        # byebug
+        @art = Art.new(art_params)
+        if @art.save!
         # 投稿一覧へ
-        redirect_to arts_path
+        redirect_to public_arts_path
         else
-            @arts = Art.all
-            render art_path
+            render new
         end
     end
     
     def destroy
-        art = Art.find(params[:id])
-        art.destroy
-        redirect_to art_path(@ari.id)
+        @art = Art.find(params[:id])
+        @art.destroy
+        redirect_to public_arts_path
     end
     
     def index
@@ -40,7 +40,7 @@ class Public::ArtsController < ApplicationController
     private
     # ストロングパロメータ
     def art_params
-        params.require(:art).pemit(:title, :body, :image ).merge(customer_id: current_customer.id)
+        params.require(:art).permit(:title, :body, :image ).merge(customer_id: current_customer.id)
     end
     
 end

@@ -1,6 +1,6 @@
 class Art < ApplicationRecord
     
-    belongs_to :costomer
+    belongs_to :customer
     has_many   :nices,   dependent: :destroy
     
     has_one_attached :image

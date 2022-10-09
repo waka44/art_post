@@ -9,7 +9,7 @@
     </ul>
 <% end %>
 
-<%= form_with model: Art.new do |f| %>
+<%= form_with model: @art, url: public_arts_path do |f| %>
     <h4>画像</h4>
     <%= f.file_field :image, accept: "image/*" %>
 
