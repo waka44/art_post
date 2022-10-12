@@ -1,5 +1,7 @@
 <!--customerニックネーム-->
-
+<%= @customer.name %>
 <!--プロフィール-->
-
-<!--customer index部分テンプレート-->
+<%= @customer.body %>
+<!--編集-->
+<%= link_to "編集", edit_public_customer_path(@customer.id) %>
+<!--customer artのindex部分テンプレート-->

@@ -3,9 +3,13 @@
 <!--editの部分テンプレート-->
 
 <!--showの部分テンプレート-->
-<%= @customer.name %>
-<%= image_tag art.image %>
+<!--投稿者名-->
+<%= link_to @customer.name, public_customer_path(@customer.id)  %><br>
+<!--イラスト-->
+<%= image_tag @art.image %>
+<!--タイトル-->
 <h4><%= @art.title %></h4>
+<!--説明文-->
 <p><%= @art.body %></p>
 
 <!--いいね機能-->
@@ -19,7 +23,7 @@
         <% end %>
 <%#    <% end %>
 
-<%= link_to "編集", edit_art_path(@art.id) %>
-<%= link_to "削除", art_path(@art.id), method: :delete, "data-confirm" => "本当に削除しますか？"　%>
+<%#= link_to "編集", edit_art_path(@art.id) %>
+<%#= link_to "削除", art_path(@art.id), method: :delete, "data-confirm" => "本当に削除しますか？"　%>
 
 <!--コメント一覧-->

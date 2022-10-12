@@ -14,6 +14,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       ## Rememberable
       t.datetime :remember_created_at
       t.string   :name,       null: false
+      t.text     :body,       null: true
       t.boolean  :is_deleted, null: false, default: false
 
       ## Trackable

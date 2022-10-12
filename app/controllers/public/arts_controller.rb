@@ -26,6 +26,7 @@ class Public::ArtsController < ApplicationController
     end
     
     def show
+        @customer = Customer.find(params[:id])
         @art = Art.find(params[:id])
     end
     

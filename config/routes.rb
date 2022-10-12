@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     
     root to: "homes#top"
     
+    resources :customers,only: [:show, :edit]
     resources :arts ,   only: [:new, :index, :show, :edit, :create, :destroy, :update] do
       resources :coments, only: [:create, :destroy]
       resources :nices,   only: [:creste, :destroy]
