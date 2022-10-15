@@ -38,6 +38,12 @@ class Public::ArtsController < ApplicationController
         @atr = Art.find(params[:id])
     end
     
+    def update
+        customer Art.find(params[:id])
+        customer.update(art_params)
+        redirect_to public_art(art.id)
+    end
+    
     private
     # ストロングパロメータ
     def art_params

@@ -1,10 +1,6 @@
-<!--customer情報（ヘッダー）-->
-
-<!--indexの部分テンプレート-->
 <h1>投稿一覧</h1>
 
 <% @arts.each do |art| %>
 <p><%= link_to art.title, public_art_path(art.id) %></p>
 <%= image_tag art.image, size: "200x200" %>
 <% end %>
-<!--投稿したcustomerニックネーム-->

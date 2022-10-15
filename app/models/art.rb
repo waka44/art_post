@@ -10,7 +10,7 @@ class Art < ApplicationRecord
     validates :image, presence: true
     
     def nice?(customer)
-        favorites.where(customer_id: customer.id).exists?
+        nices.where(customer_id: customer.id).exists?
     end 
     
 end
