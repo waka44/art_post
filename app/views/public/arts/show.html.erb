@@ -28,3 +28,17 @@
 <%#= link_to "削除", art_path(@art.id), method: :delete, "data-confirm" => "本当に削除しますか？"　%>
 
 <!--コメント一覧-->
+<div>
+    <p>コメント件数:<%= @art.coments.count %></p>
+    <% @art.coments.each do |coment| %>
+    <p><%= image_tag coment.customer.get_profile_image(100,100) %></p>
+    <%= coment.customer.name %>
+    <%= coment.created_at.strftime('%Y/%m/%d') %><%= coment.coment %>
+    <% end %>
+</div>
+<div>
+    <%= form_with model: [@art, @coment] do |f| %>
+    <%= f.text_area :coment, rows: '5', placeholder: "コメントをここに"　%>
+    <%= f.submit "送信する"　%>
+    <% end %>
+</div>
